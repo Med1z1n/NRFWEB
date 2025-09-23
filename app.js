@@ -60,7 +60,7 @@ function updateMessage(text) {
 document.getElementById('connectButton').addEventListener('click', async () => {
     try {
         device = await navigator.bluetooth.requestDevice({
-            filters: [{ name: 'Sienna's Remote' }],
+            filters: [{ name: 'Sienna\'s Remote' }],
             optionalServices: [serviceUUID]
         });
 
@@ -91,7 +91,7 @@ function handleNotification(event) {
         console.log("Button 3");
         updateMessage("You clicked the wrong button, but I'm glad you did. I put this here if you ever misclick, misremember, or just goof around. I love you Sienna. I love who you are not that you were my Girlfriend. I'm madly in love with you.");
     } else if (rawMessage === "4") {
-        console.log("Button 4);
+        console.log("Button 4");
         updateMessage("You clicked the wrong button, but I'm glad you did. I put this here if you ever misclick, misremember, or just goof around. I love you Sienna. This website is what I want to remember of us. I want to remember my last labor of love I could do for you. The last surprise I planned. The gift I thought would make things better.");
     } else {
         updateMessage(rawMessage);
