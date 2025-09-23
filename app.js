@@ -60,7 +60,7 @@ function updateMessage(text) {
 document.getElementById('connectButton').addEventListener('click', async () => {
     try {
         device = await navigator.bluetooth.requestDevice({
-            filters: [{ name: 'Sienna\'s Remote' }],
+            filters: [{ name: "Sienna's Remote" }],
             optionalServices: [serviceUUID]
         });
 
