@@ -82,6 +82,7 @@ function handleNotification(event) {
     const value = event.target.value;
     const rawMessage = new TextDecoder().decode(value);
     updateMessage(rawMessage);
+    console.log(rawMessage);
     // If the message starts with 1: or 2:, split into code + message
     // if (rawMessage.startsWith("1:") || rawMessage.startsWith("2:")) {
     //     const [code, ...rest] = rawMessage.split(":");
