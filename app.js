@@ -9,7 +9,7 @@ const backgrounds = [
    // 'background5.jpg',
    //  'background6.png',
     'background7.jpg',
-   // 'background8.jpg',
+    'background8.jpg',
    // 'background9.jpg',
     'background10.jpg',
    // 'background11.jpg',
