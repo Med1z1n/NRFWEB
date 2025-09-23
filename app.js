@@ -60,7 +60,7 @@ function updateMessage(text) {
 document.getElementById('connectButton').addEventListener('click', async () => {
     try {
         device = await navigator.bluetooth.requestDevice({
-            filters: [{ name: 'Cycler' }],
+            filters: [{ name: 'Sienna's Remote' }],
             optionalServices: [serviceUUID]
         });
 
@@ -81,24 +81,19 @@ document.getElementById('connectButton').addEventListener('click', async () => {
 function handleNotification(event) {
     const value = event.target.value;
     const rawMessage = new TextDecoder().decode(value);
-    console.log(rawMessage);
+    
     //If the message starts with 1: or 2:, split into code + message
     if (rawMessage.startsWith("1:") || rawMessage.startsWith("2:")) {
         const [code, ...rest] = rawMessage.split(":");
         const message = rest.join(":"); // handles extra ":" in text
         updateMessage(message); // show only the message
-    } 
-    // If it's just "3" or "4", handle as controller input
-    else if (rawMessage === "3") {
-        console.log("Button 3 pressed → game control");
-        // add your game logic here
-    } 
-    else if (rawMessage === "4") {
-        console.log("Button 4 pressed → game control");
-        // add your game logic here
-    } 
-    // fallback for any unexpected payloads
-    else {
+    } else if (rawMessage === "3") {
+        console.log("Button 3");
+        updateMessage("You clicked the wrong button, but I'm glad you did. I put this here if you ever misclick, misremember, or just goof around. I love you Sienna. I love who you are not that you were my Girlfriend. I'm madly in love with you.");
+    } else if (rawMessage === "4") {
+        console.log("Button 4);
+        updateMessage("You clicked the wrong button, but I'm glad you did. I put this here if you ever misclick, misremember, or just goof around. I love you Sienna. This website is what I want to remember of us. I want to remember my last labor of love I could do for you. The last surprise I planned. The gift I thought would make things better.");
+    } else {
         updateMessage(rawMessage);
     }
 }
