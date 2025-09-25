@@ -80,7 +80,7 @@ document.getElementById('connectButton').addEventListener('click', async () => {
         // Unlock secret backgrounds
         backgrounds = [...normalBackgrounds, ...secretBackgrounds];
 
-        updateMessage("Connected! Secret backgrounds unlocked 💖");
+        updateMessage("Connected! New Background Unlocked!");
     } catch (error) {
         console.error(error);
         alert("Failed to connect: " + error);
@@ -97,10 +97,10 @@ function handleNotification(event) {
         updateMessage(message);
     } else if (rawMessage === "3") {
         console.log("Button 3");
-        updateMessage("You clicked the wrong button, but I'm glad you did...");
+        updateMessage("You clicked the wrong button, but I'm glad you did. I put this here if you ever misclick, misremember, or just goof around. I love you Sienna. I love who you are, not that you were my Girlfriend. I'm madly in love with you.");
     } else if (rawMessage === "4") {
         console.log("Button 4");
-        updateMessage("You clicked the wrong button, but I'm glad you did...");
+        updateMessage("You clicked the wrong button, but I'm glad you did. I put this here if you ever misclick, misremember, or just goof around. I love you Sienna. This website is what I want to remember of us. I want to remember my last labor of love I could do for you. The last surprise I planned. The gift that would make things better, the gift that would be a testament to my love and commitment to you.");
     } else {
         updateMessage(rawMessage);
     }
